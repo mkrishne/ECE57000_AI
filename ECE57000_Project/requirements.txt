@@ -1,0 +1,50 @@
+# TensorFlow for building and running the neural network
+tensorflow==2.8.0
+
+# Sionna for communication system components and FEC simulations
+sionna==0.9.0
+
+# Numerical operations
+numpy==1.21.5
+scipy==1.7.3  # for scientific computing if any additional functions are needed
+
+# Plotting and data visualization
+matplotlib==3.5.1
+seaborn==0.11.2  # optional, but useful for advanced data visualization
+
+# Data manipulation and analysis
+pandas==1.3.5
+
+# TensorFlow-specific utilities and metrics
+tensorflow-addons==0.15.0  # for potential extended functionality with TensorFlow 2.8.0
+
+# PyTorch (optional for parts of the code in case PyTorch is also used)
+torch==1.10.2
+torchvision==0.11.3  # for vision datasets and utilities, if needed
+
+# Jupyter and IPython for interactive notebooks (if running in a Jupyter environment)
+jupyter==1.0.0
+ipython==7.31.1
+===================================================================================================================================
+GPU-Specific Setup (Optional):
+If you plan to run this on a CUDA-enabled GPU and want to install the GPU-specific version of TensorFlow and PyTorch, use the following:
+# For TensorFlow GPU installation (replace if using a different version of CUDA)
+tensorflow-gpu==2.8.0
+
+# For PyTorch with CUDA support (replace 11.1 with the appropriate CUDA version)
+torch==1.10.2+cu111
+torchvision==0.11.3+cu111
+
+===================================================================================================================================
+Installation
+1. Install requirements:
+pip install -r requirements.txt
+
+2. Verify GPU support (optional): To verify that TensorFlow and PyTorch are utilizing GPU:
+import tensorflow as tf
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
+import torch
+print("CUDA available:", torch.cuda.is_available())
+
+3. Colab/Cloud: For Google Colab, use %pip install -r requirements.txt at the start of the notebook to ensure all dependencies load.
